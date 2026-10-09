@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <style>
+        
+        h1 {
+            color: #00aff0;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #333333;
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #00aff0;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #008ec2;
+        }
+    </style>
+
+
+    <div class="container">
+        <h1>Gracias por contactarte con OnlyFlans</h1>
+        <p>Te responderemos en breve.</p>
+        
+        <a href="/" class="btn">volver a inicio</a>
+    </div>
+
+{% endblock %}

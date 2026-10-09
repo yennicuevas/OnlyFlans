@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block content %}
+ <h2 class="text-center my-4">Nuestras Sucursales</h2>
+ <div class="row row-cols-1-md-3 g-4">
+        {% for local in locales %}
+        <div class="col">
+            <div class="card h-100 shadow-sm border-sucess">
+                <div class="card-body">
+                    <h5 class="card-title text-sucess">{{ local.nombre }}</h5>
+                    <p class="card-text mb-1"><strong>Direccion:</strong> {{ local.direccion }} </p>
+                    <p class="card-text mb-1"></p><strong>Comuna:</strong> {{ local.comuna }} </p>
+                    <p class="card-text mb-1"></p><strong>Telefono:</strong> {{ local.telefono }} </p>
+                    <p class="card-text mb-0"></p><strong>Horario:</strong> {{ local.horario }} </p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class ="text-muted">Aun no hay sucursales,pronto actualizaremos.</p>
+        {% endfor %}
+ </div>
+ {% endblock %}

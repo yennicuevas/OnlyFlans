@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5" style="max-width: 400px;">
+    <h2 class="text-center">Iniciar sesión</h2>
+    <form method="post" class="card p-4 shadow-sm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+    </form>
+</div>
+{% endblock %}

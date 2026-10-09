@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center my-5">
+    <div class="col-md-6 border p-4 shadow-sm rounded bg-white">
+        <h3 class="text-center mb-4">Contáctanos</h3>
+        <form action="{% url 'contacto' %}" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <div class="mb-3">
+                {{ form.customer_name.label_tag }}
+                {{ form.customer_name }}
+                <span class="text-danger">{{ form.customer_name.errors }}</span>
+            </div>
+
+            <div class="mb-3">
+                {{ form.customer_email.label_tag }}
+                {{ form.customer_email }}
+                <span class="text-danger">{{ form.customer_email.errors }}</span>
+            </div>
+
+            <div class="mb-3">
+                {{ form.message.label_tag }}
+                {{ form.message }}
+                <span class="text-danger">{{ form.message.errors }}</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

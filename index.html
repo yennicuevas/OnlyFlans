@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center my-4">Nuestros Flanes </h2>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for flan in flanes %}
+    <div class="col">
+        <div class="card h-100 shadow-sm">
+            <img src="{{ flan.image_url }}" class="card-img-top" alt="{{ flan.name }}" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{ flan.name }}</h5>
+                <p class="card-text text-muted">{{ flan.description }}</p>
+                <p class="fw-bold text-sucess mb-0">${{ flan.price }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-4">Bienvenido,{{ user.get_username }}!</h1>
+  <p class="lead">Disfruta de nuestros flanes exclusivos:</p>
+  <hr class="my-4">
+  <p>Aqui encontraras algunos de los mejores flanes,sabrosos,cremosos,unicos.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="contacto" role="button">contactanos</a>
+  </p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for flan in flanes %}
+    <div class="col">
+        <div class="card h-100 border-warning">
+            <img src="{{ flan.image_url }}" class="card-img-top" alt="{{ flan.name }}" style="height: 200px; object-fit: cover;">
+            <div class="card-body bg-light">
+                <h5 class="card-title text-warning">{{ flan.name }}</h5>
+                <p class="card-text">{{ flan.description }}</p>
+                <p class="fw-bold text-sucess mb-0">${{ flan.price }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
